@@ -18,6 +18,10 @@ export const navLinks = [
   {
     name: "Contact",
     hash: "#contact",
+  },
+  {
+    name: "Blog",
+    hash: "https://blog.yashpatel.dev/",
   }
 ] as const;
 

@@ -1,4 +1,6 @@
 import { styled } from 'styled-components';
+import ContactButton from "../icons/ContactButton";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 const StyledHeroSection = styled.section`
   /* border: var(--dev-border); */
@@ -21,7 +23,7 @@ const StyledHeroSection = styled.section`
     margin: 10px 0 0 0;
     color: var(--white);
     font-family: var(--font-mono);
-    font-size: clamp(var(--fs-xxl), var(--fs-xxxl), var(--fs-4xl));;
+    font-size: clamp(var(--fs-xxl), var(--fs-xxxl), var(--fs-4xl));
     font-weight: 400;
     text-align: center;
   }
@@ -30,11 +32,10 @@ const StyledHeroSection = styled.section`
     margin: 24px 0 0 0;
     color: var(--white);
     font-family: var(--font-mono);
-    font-size: clamp(var(--fs-md), var(--fs-lg), var(--fs-xl));;;
+    font-size: clamp(var(--fs-md), var(--fs-lg), var(--fs-xl));
     font-weight: 300;
     align-items: center;
     word-wrap: break-word;
-
   }
 
   .profile-head-div {
@@ -87,7 +88,6 @@ const StyledHeroSection = styled.section`
       gap: 5px;
       margin: 20px 0 0 0;
       font-size: var(--fs-xs);
-      
     }
 
     .profile-head-div {
@@ -114,18 +114,20 @@ const words = 'Software Developer | Full-stack Enthusiast';
 
 const Hero = (): JSX.Element => {
   return (
-    <StyledHeroSection id='hero'>
-      <div className='profile-head-div'>
-        <img src='/assets/images/profileHead.png' alt='Profile Head' />
-      </div>
-      <h1>Yash Patel</h1>
-      <p className='subtext-1'>{words}</p>
-      <p className='tagline'>
-        <span>Crafting Innovative Solutions in </span>
-        <span>Java & JavaScript </span>
-      </p>
-      <BackgroundBlur />
-    </StyledHeroSection>
+    <>
+      <StyledHeroSection id='hero'>
+        <div className='profile-head-div'>
+          <img src='/assets/images/profileHead.png' alt='Profile Head' />
+        </div>
+        <h1>Yash Patel</h1>
+        <p className='subtext-1'>{words}</p>
+        <p className='tagline'>
+          <span>Crafting Innovative Solutions in </span>
+          <span>Java & JavaScript </span>
+        </p>
+        <BackgroundBlur />
+      </StyledHeroSection>
+    </>
   );
 };
 
