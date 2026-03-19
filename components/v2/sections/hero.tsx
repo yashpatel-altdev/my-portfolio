@@ -117,23 +117,22 @@ export default function V2Hero() {
     <StyledHero id="home">
       <motion.div variants={container} initial="hidden" animate="show">
         <motion.p className="label" variants={item}>
-          Software Developer
+          Software Engineer
         </motion.p>
         <motion.h1 variants={item}>Yash Patel</motion.h1>
-        <motion.h2 variants={item}>Full-stack Enthusiast</motion.h2>
+        <motion.h2 variants={item}>Systems Thinker & Product Builder</motion.h2>
         <motion.p className="bio" variants={item}>
-          Crafting innovative solutions in Java & JavaScript. Building scalable systems that make
-          people&apos;s lives better.
+          Engineering products from architecture to deployment — with an eye on the larger picture:
+          system design, scalability, and the product decisions that actually matter.
         </motion.p>
         <motion.div className="cta-links" variants={item}>
-          <a href="#about" data-magnetic>
+          <a href="#about">
             About me ↓
           </a>
           <a
             href="https://drive.google.com/file/d/1DK6NxO7E3IFn5dZper-9Z2wD09vDTkQN/view?usp=drive_link"
             target="_blank"
             rel="noreferrer"
-            data-magnetic
           >
             Resume ↗
           </a>

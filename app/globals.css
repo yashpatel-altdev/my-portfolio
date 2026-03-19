@@ -19,6 +19,13 @@
   --v2-border-subtle: rgba(255, 255, 255, 0.08);
   --v2-border-line: rgba(255, 255, 255, 0.15);
 
+  /* Accent Colors */
+  --v2-accent-beige: #c8b89a;
+  --v2-accent-beige-muted: rgba(200, 184, 154, 0.08);
+  --v2-accent-green: #2e5339;
+  --v2-accent-green-light: #4a7c59;
+  --v2-accent-green-muted: rgba(46, 83, 57, 0.12);
+
   /* Shared Fonts */
   --font-sans: 'Montserrat', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system,
     system-ui, sans-serif;
@@ -89,9 +96,3 @@ p {
   margin: 0;
 }
 
-/* Hide native cursor on fine-pointer (mouse) devices in V2 */
-@media (pointer: fine) {
-  .v2-page * {
-    cursor: none !important;
-  }
-}

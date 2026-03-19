@@ -74,7 +74,7 @@ export default function V2About() {
         transition={{ duration: 0.7 }}
       >
         <PullQuote>
-          <p>Innovative by Design, Developer by Nature</p>
+          <p>Engineering systems that scale. Thinking beyond the feature.</p>
         </PullQuote>
       </motion.div>
       <motion.div
@@ -85,19 +85,20 @@ export default function V2About() {
       >
         <BioColumn>
           <p>
-            I am a software developer with a background in Java, MySQL, and JavaScript. Passionate
-            about learning new technologies and becoming a more versatile developer every day.
+            I&apos;m a software engineer with a deep interest in the larger systems that power products —
+            architecture decisions, API design, scalability trade-offs, and the strategic thinking
+            behind what gets built and why.
           </p>
           <p>
-            Currently building scalable products at Match My Roomie, where I work across the full
-            stack — from React Native mobile to Next.js web and Azure infrastructure.
+            Currently at Match My Roomie, I work across the full stack, but what drives me most is
+            the systems thinking underneath: how services communicate, how products evolve, and how
+            engineering decisions shape user outcomes at scale.
           </p>
           <div className="socials">
             <a
               href="https://www.linkedin.com/in/yash-patel-dev/"
               target="_blank"
               rel="noreferrer"
-              data-magnetic
               aria-label="LinkedIn"
             >
               <FontAwesomeIcon icon={faLinkedinIn} />
@@ -106,14 +107,12 @@ export default function V2About() {
               href="https://github.com/yashpatel024"
               target="_blank"
               rel="noreferrer"
-              data-magnetic
               aria-label="GitHub"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               href="mailto:yashpatel.dev.ca@outlook.com"
-              data-magnetic
               aria-label="Email"
             >
               <FontAwesomeIcon icon={faAt} />

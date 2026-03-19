@@ -2,7 +2,6 @@
 
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import MagneticCursor from './magnetic-cursor';
 import V2Nav from './nav';
 import V2Footer from './footer';
 
@@ -29,7 +28,6 @@ export default function V2Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <V2GlobalStyle />
-      <MagneticCursor />
       <StyledV2Wrapper className="v2-page">
         <V2Nav />
         <main>{children}</main>

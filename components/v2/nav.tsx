@@ -160,13 +160,13 @@ export default function V2Nav() {
   return (
     <>
       <StyledNav>
-        <Logo href="/" data-magnetic>
+        <Logo href="/" >
           YP
         </Logo>
         <DesktopLinks>
           {navLinks.map(({ name, hash }) => (
             <NavItem key={hash}>
-              <a href={hash} data-magnetic>
+              <a href={hash} >
                 {name}
                 <span className="underline" />
               </a>

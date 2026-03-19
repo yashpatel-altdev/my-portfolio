@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Toast from '@/components/ui/toast';
-import { databases } from '@/lib/appwrite';
-import { ID } from 'appwrite';
 
 const StyledContact = styled.section`
   padding: 120px 5%;
@@ -36,6 +34,11 @@ const StyledContact = styled.section`
     gap: 0;
     border-bottom: 1px solid var(--v2-border-line);
     margin-bottom: 40px;
+    transition: border-bottom-color 0.2s ease;
+
+    &:focus-within {
+      border-bottom-color: var(--v2-accent-green-light);
+    }
 
     input {
       flex: 1;
@@ -64,7 +67,12 @@ const StyledContact = styled.section`
       align-items: center;
 
       &:hover {
-        color: var(--v2-text-primary);
+        color: var(--v2-accent-green-light);
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
       }
     }
   }
@@ -78,25 +86,23 @@ const StyledContact = styled.section`
       color: var(--v2-text-secondary);
       font-size: 20px;
       text-decoration: none;
-      transition: opacity 0.2s ease;
+      transition: color 0.2s ease;
 
       &:hover {
-        opacity: 0.6;
-        color: var(--v2-text-primary);
+        color: var(--v2-accent-green-light);
       }
     }
   }
 `;
 
-const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-
 export default function V2Contact() {
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
   const [toastOpen, setToastOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
 
-  const showToast = (message: string, resetEmail = true) => {
-    if (resetEmail) setEmail('');
+  const showToast = (message: string, clearEmail = true) => {
+    if (clearEmail) setEmail('');
     setToastMessage(message);
     setToastOpen(true);
   };
@@ -107,28 +113,20 @@ export default function V2Contact() {
       showToast('Please enter your email.', false);
       return;
     }
-    if (!emailRegex.test(email)) {
-      showToast('Please enter a valid email address.', false);
-      return;
-    }
 
+    setLoading(true);
     try {
-      const response = await databases.createDocument(
-        process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID!,
-        process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID!,
-        ID.unique(),
-        { email_id: email }
-      );
-      if (response.$id.length > 0) {
-        showToast(`Thanks for reaching out, ${response.email_id}.`);
-      }
-    } catch (error: unknown) {
-      const appwriteError = error as { code?: number };
-      if (appwriteError.code === 409) {
-        showToast('Thank you — I already have your email.');
-      } else {
-        showToast('Something went wrong. Please try again.');
-      }
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json() as { success: boolean; message: string };
+      showToast(data.message, data.success);
+    } catch {
+      showToast('Something went wrong. Please try again.', false);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -150,8 +148,9 @@ export default function V2Contact() {
               placeholder="your@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              disabled={loading}
             />
-            <button type="submit" data-magnetic aria-label="Submit">
+            <button type="submit" aria-label="Submit" disabled={loading}>
               <FontAwesomeIcon icon={faArrowRight} />
             </button>
           </div>
@@ -161,7 +160,6 @@ export default function V2Contact() {
             href="https://www.linkedin.com/in/yash-patel-dev/"
             target="_blank"
             rel="noreferrer"
-            data-magnetic
             aria-label="LinkedIn"
           >
             <FontAwesomeIcon icon={faLinkedinIn} />
@@ -170,12 +168,11 @@ export default function V2Contact() {
             href="https://github.com/yashpatel024"
             target="_blank"
             rel="noreferrer"
-            data-magnetic
             aria-label="GitHub"
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
-          <a href="mailto:yashpatel.dev.ca@outlook.com" data-magnetic aria-label="Email">
+          <a href="mailto:yashpatel.dev.ca@outlook.com" aria-label="Email">
             <FontAwesomeIcon icon={faAt} />
           </a>
         </div>

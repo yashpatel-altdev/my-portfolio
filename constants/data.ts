@@ -1,14 +1,18 @@
 export const navLinks = [
   {
-    name: 'About me',
+    name: 'About',
     hash: '#about',
+  },
+  {
+    name: 'Beyond',
+    hash: '#beyond',
   },
   {
     name: 'Experience',
     hash: '#experience',
   },
   {
-    name: 'Project',
+    name: 'Projects',
     hash: '#project',
   },
   {
@@ -22,6 +26,18 @@ export const navLinks = [
 ] as const;
 
 export const experiencesData = [
+  {
+    id: 'plgrd-experience',
+    title: 'API Specialist / API Integration Developer',
+    company: 'Plusgrade',
+    companyUrl: 'https://www.plusgrade.com/',
+    location: 'Toronto, Canada',
+    description:
+      '• Spearheaded the development and maintenance of the company\'s website, initially using WordPress for static hosting on AWS and later transitioning to Next.js deployed over Azure for improved performance and scalability. Implemented AppWrite as a Backend-as-a-Service (BaaS) solution, reducing backend development time by 60% and improving overall system scalability. Engineered a cross-platform mobile application using React Native, enabling the company to reach both iOS and Android users with a single codebase, resulting in a 50% reduction in development costs.',
+    icon: '/assets/images/mmr-logo.png',
+    date: 'May, 2024 - Present',
+    skills: ['Next.js', 'React Native', 'Azure', 'Git', 'BaaS', 'TailwindCSS'],
+  },
   {
     id: 'mmr-experience',
     title: 'Software Developer',
@@ -83,3 +99,77 @@ export const experiencesData = [
     skills: [],
   },
 ] as const;
+
+export const projects = [
+  {
+    id: 'bad',
+    number: '01',
+    title: 'Business Analytical Dashboard',
+    description:
+      "Led the Capstone Project to develop an analytics dashboard using the MERN stack deployed over Firebase — recognized as 'Best of Program' for innovative use of technology to visualize company performance data.",
+    techStack: ['TypeScript', 'React', 'Node.js', 'MySQL', 'Firebase', 'JEST'],
+    link: 'https://www.figma.com/design/F1t3BCpGlyDdVksOQhrQXI/Capstone-Presentation?node-id=29-29&t=aJ5gflohi2F3ymD0-1',
+    linkLabel: 'View on Figma ↗',
+    category: 'Dashboard',
+  },
+  {
+    id: 'wm',
+    number: '02',
+    title: 'Wander Mission',
+    description:
+      'Engineered a scalable travel platform with MongoDB and Amazon RDS, showcasing familiarity with AWS services. Utilized Redux for state management and Mongoose for MongoDB interaction, ensuring efficient data handling.',
+    techStack: ['MongoDB', 'Express', 'React', 'Node.js', 'Redux', 'AWS RDS'],
+    link: 'https://github.com/yashpatel024/WanderMission-Travel-beyond-your-imagination',
+    linkLabel: 'View on GitHub ↗',
+    category: 'Web App',
+  },
+  {
+    id: 'placeholder',
+    number: '03',
+    title: 'Coming Soon',
+    description:
+      'A new project currently in the works — an exploration of system design and product thinking put into code. Stay tuned.',
+    techStack: ['TBD'],
+    link: '#',
+    linkLabel: 'In Progress',
+    category: 'TBD',
+  },
+] as const;
+
+export const personalData = {
+  currentlyReading: {
+    title: "Man's Search for Meaning",
+    author: 'Viktor E. Frankl',
+    note: "On finding purpose through suffering — a perspective that reshapes how I think about meaningful work and what's worth building.",
+  },
+  cards: [
+    {
+      id: 'obsessing',
+      label: 'Currently Obsessing Over',
+      content: '[Placeholder — e.g. system design trade-offs, distributed systems, AI-native products]',
+    },
+    {
+      id: 'not-engineering',
+      label: "When I'm Not Engineering",
+      content: '[Placeholder — hobbies, interests outside of tech]',
+    },
+    {
+      id: 'believe-in',
+      label: 'I Believe In',
+      content: '[Placeholder — values, principles, e.g. "Systems thinking over quick fixes"]',
+    },
+    {
+      id: 'fun-fact',
+      label: 'Fun Fact',
+      content: '[Placeholder — something surprising or memorable about you]',
+    },
+  ],
+  interests: [
+    'System Design',
+    'Software Architecture',
+    'Product Strategy',
+    'Distributed Systems',
+    'Developer Experience',
+    'API Design',
+  ],
+} as const;
