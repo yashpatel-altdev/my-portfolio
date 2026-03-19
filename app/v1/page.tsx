@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import V1Layout from '@/components/v1/layout';
 import Hero from '@/components/v1/sections/hero';
 import About from '@/components/v1/sections/about';
