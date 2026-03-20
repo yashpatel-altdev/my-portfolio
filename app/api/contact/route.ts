@@ -1,19 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Client, Databases, ID } from 'appwrite';
+import { createSupabaseClient } from '@/lib/supabase';
 
 const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-
-function createAppwriteClient() {
-  const endpoint = process.env.APPWRITE_ENDPOINT;
-  const project = process.env.APPWRITE_PROJECT;
-
-  if (!endpoint || !project) {
-    throw new Error('Appwrite environment variables are not configured.');
-  }
-
-  const client = new Client().setEndpoint(endpoint).setProject(project);
-  return new Databases(client);
-}
 
 export async function POST(request: NextRequest) {
   let body: unknown;
@@ -36,28 +24,25 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const databaseId = process.env.APPWRITE_DATABASE_ID;
-  const collectionId = process.env.APPWRITE_COLLECTION_ID;
-
-  if (!databaseId || !collectionId) {
-    return NextResponse.json(
-      { success: false, message: 'Server configuration error. Please try again later.' },
-      { status: 500 }
-    );
-  }
-
   try {
-    const databases = createAppwriteClient();
-    await databases.createDocument(databaseId, collectionId, ID.unique(), { email_id: email });
-    return NextResponse.json({ success: true, message: `Thanks for reaching out, ${email}.` });
-  } catch (error: unknown) {
-    const appwriteError = error as { code?: number };
-    if (appwriteError.code === 409) {
-      return NextResponse.json(
-        { success: true, message: 'Thank you — I already have your email.' },
-        { status: 200 }
-      );
+    const supabase = createSupabaseClient();
+    const { error } = await supabase
+      .from('email_submissions')
+      .insert({ email });
+
+    if (error) {
+      // Postgres unique constraint violation — duplicate email
+      if (error.code === '23505') {
+        return NextResponse.json(
+          { success: true, message: 'Thank you — I already have your email.' },
+          { status: 200 }
+        );
+      }
+      throw error;
     }
+
+    return NextResponse.json({ success: true, message: `Thanks for reaching out, ${email}.` });
+  } catch {
     return NextResponse.json(
       { success: false, message: 'Something went wrong. Please try again.' },
       { status: 500 }
