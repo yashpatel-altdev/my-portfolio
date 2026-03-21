@@ -33,22 +33,10 @@ export const experiencesData = [
     companyUrl: 'https://www.plusgrade.com/',
     location: 'Toronto, Canada',
     description:
-      '• Spearheaded the development and maintenance of the company\'s website, initially using WordPress for static hosting on AWS and later transitioning to Next.js deployed over Azure for improved performance and scalability. Implemented AppWrite as a Backend-as-a-Service (BaaS) solution, reducing backend development time by 60% and improving overall system scalability. Engineered a cross-platform mobile application using React Native, enabling the company to reach both iOS and Android users with a single codebase, resulting in a 50% reduction in development costs.',
-    icon: '/assets/images/mmr-logo.png',
-    date: 'May, 2024 - Present',
-    skills: ['Next.js', 'React Native', 'Azure', 'Git', 'BaaS', 'TailwindCSS'],
-  },
-  {
-    id: 'mmr-experience',
-    title: 'Software Developer',
-    company: 'Match My Roomie',
-    companyUrl: 'https://matchmyroomie.com/',
-    location: 'Canada',
-    description:
-      '• Spearheaded the development and maintenance of the company\'s website, initially using WordPress for static hosting on AWS and later transitioning to Next.js deployed over Azure for improved performance and scalability. Implemented AppWrite as a Backend-as-a-Service (BaaS) solution, reducing backend development time by 60% and improving overall system scalability. Engineered a cross-platform mobile application using React Native, enabling the company to reach both iOS and Android users with a single codebase, resulting in a 50% reduction in development costs.',
-    icon: '/assets/images/mmr-logo.png',
-    date: 'May, 2024 - Present',
-    skills: ['Next.js', 'React Native', 'Azure', 'Git', 'BaaS', 'TailwindCSS'],
+      'Drove technical integrations for Loyalty Program partners — analyzing requirements, authoring API contracts and integration guides, and participating in partner engineering discussions to refine error handling and end-to-end test scenarios. Configured OAuth2, OIDC, and SAML authentication flows, reducing auth issues through improved validation logic. Provided L3 support via Splunk, performed UI updates via GitLab CI/CD, and leveraged AI tools (Gemini, Glean) to accelerate configuration and pattern research.',
+    icon: '/assets/images/plusgrade.jpeg',
+    date: 'May, 2024 - Sep, 2024',
+    skills: ['System Design', 'REST', 'SOAP', 'GraphQL', 'OAuth2', 'OIDC', 'SAML', 'Python', 'JavaScript', 'Splunk'],
   },
   {
     id: 'agfa-experience',
@@ -146,22 +134,22 @@ export const personalData = {
     {
       id: 'obsessing',
       label: 'Currently Obsessing Over',
-      content: '[Placeholder — e.g. system design trade-offs, distributed systems, AI-native products]',
+      content: 'Agentic systems, MCP, context engineering, and the broader implications of AI on system architecture — how the primitives of software are being fundamentally redesigned.',
     },
     {
       id: 'not-engineering',
       label: "When I'm Not Engineering",
-      content: '[Placeholder — hobbies, interests outside of tech]',
+      content: 'Working out, hiking, playing or watching sports, reading, and hunting down hidden gems — places most people walk right past.',
     },
     {
       id: 'believe-in',
       label: 'I Believe In',
-      content: '[Placeholder — values, principles, e.g. "Systems thinking over quick fixes"]',
+      content: 'Consistency and hard work above all. That good things happen to good people. And that you can believe in the larger scheme of things without needing a religion to frame it.',
     },
     {
       id: 'fun-fact',
       label: 'Fun Fact',
-      content: '[Placeholder — something surprising or memorable about you]',
+      content: "I'm a committed generalist — city skylines and quiet mountains, stadiums and living rooms, all cuisines and all genres. I'll go hiking with a group of ten or spend the weekend on the couch with my partner. The only common thread: I'm genuinely curious about all of it.",
     },
   ],
   interests: [
