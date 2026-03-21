@@ -35,7 +35,7 @@ export const experiencesData = [
     description:
       'Drove technical integrations for Loyalty Program partners — analyzing requirements, authoring API contracts and integration guides, and participating in partner engineering discussions to refine error handling and end-to-end test scenarios. Configured OAuth2, OIDC, and SAML authentication flows, reducing auth issues through improved validation logic. Provided L3 support via Splunk, performed UI updates via GitLab CI/CD, and leveraged AI tools (Gemini, Glean) to accelerate configuration and pattern research.',
     icon: '/assets/images/plusgrade.jpeg',
-    date: 'May, 2024 - Sep, 2024',
+    date: 'Nov, 2024 - Present',
     skills: ['System Design', 'REST', 'SOAP', 'GraphQL', 'OAuth2', 'OIDC', 'SAML', 'Python', 'JavaScript', 'Splunk'],
   },
   {
