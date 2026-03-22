@@ -85,14 +85,15 @@ export default function V2About() {
       >
         <BioColumn>
           <p>
-            I&apos;m a software engineer with a deep interest in the larger systems that power products —
-            architecture decisions, API design, scalability trade-offs, and the strategic thinking
-            behind what gets built and why.
+            I&apos;m a software engineer drawn to the architecture layer — API design, system boundaries,
+            scalability trade-offs, and the product thinking behind what gets built and why. I care
+            less about individual features and more about the systems that make them possible.
           </p>
           <p>
-            Currently at Match My Roomie, I work across the full stack, but what drives me most is
-            the systems thinking underneath: how services communicate, how products evolve, and how
-            engineering decisions shape user outcomes at scale.
+            Currently at Plusgrade, I work on technical integrations for Loyalty Program partners —
+            designing API contracts, configuring authentication flows (OAuth2, OIDC, SAML), and
+            bridging the gap between partner engineering teams and internal systems. It&apos;s work
+            that sits at the intersection of systems design, developer experience, and product.
           </p>
           <div className="socials">
             <a

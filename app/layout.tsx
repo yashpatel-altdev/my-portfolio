@@ -12,9 +12,27 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Yash Patel — Software Developer',
+  title: 'Yash Patel — Software Engineer',
   description:
-    'Portfolio of Yash Patel, Software Developer specializing in full-stack development with Java and JavaScript.',
+    'Portfolio of Yash Patel — Software Engineer focused on system design, API architecture, and building products that scale.',
+  icons: {
+    icon: '/assets/images/personal-brand-logo.png',
+    apple: '/assets/images/personal-brand-logo.png',
+  },
+  openGraph: {
+    title: 'Yash Patel — Software Engineer',
+    description:
+      'Software Engineer focused on system design, API architecture, and building products that scale.',
+    url: 'https://yashpatel.dev',
+    siteName: 'Yash Patel',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Yash Patel — Software Engineer',
+    description:
+      'Software Engineer focused on system design, API architecture, and building products that scale.',
+  },
 };
 
 export default function RootLayout({
